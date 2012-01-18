@@ -124,13 +124,12 @@ class B; // Vorwaertsdeklaration
 
 class A{
 	private:
-		B* mB[n-1]; // Pointerarray auf B-Objekte
+		B* mB[n]; // Pointerarray auf B-Objekte
 	
 	public:
 	    A();
 		void addB(B* pB);
 		void removeB(B* pB);
-		B* getB(int uniqueBValue );
 };
 \end{lstlisting}
 
@@ -143,7 +142,7 @@ A:A() {
 	}
 }
 
-// fuer removeB sinngemaess mit entfernen und 0 setzten
+// fuer removeB sinngemaess (->setA(0))
 void A::addB(B* pB) {
 	for(int i = 0; i<n; i++) {
 		if(mB[i] == 0) {
@@ -169,7 +168,6 @@ class B {
 		B();
 		void setA(A* pA);
 		A* getA();
-		
 };
 \end{lstlisting}
 
