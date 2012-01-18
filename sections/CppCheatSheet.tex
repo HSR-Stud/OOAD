@@ -185,6 +185,43 @@ a.remove(&b2);
 \end{lstlisting}
 \end{multicols}
 
+\subsection{Vererbung}
+\begin{multicols}{2}
+\textbf{Basisklasse}
+\begin{lstlisting}
+	class: Superclass
+	{
+	public:
+				Superclass(int Zahl);
+		void	setSuperzahl(int super)
+	
+	private:
+		int superzahl	
+	}	
+\end{lstlisting}
+
+\columnbreak
+
+\textbf{abgeleitete Klasse}
+\begin{lstlisting}
+	class:		Subclass: public Superclass
+	{
+	public:
+				Subclass(double Zahl);	
+		void	setSubclass(double sub)
+		
+	private:
+		double	subzahl	
+	}	
+\end{lstlisting}
+\end{multicols}
+
+\textbf{Aufruf}
+\begin{lstlisting}
+	Subclass.setSuperclass(42);
+	Subclass.setSubclass(4.2);
+\end{lstlisting}
+
 
 
 
