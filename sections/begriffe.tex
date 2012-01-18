@@ -1,7 +1,7 @@
 \section{Begriffe}
 \subsection{Klasse}
 	Eine Klasse ist eine Vorlage für ein Objekt.\\
-	\begin{tabular}{p{3cm}p{15cm}}
+	\begin{tabular}{p{3.5cm}p{14.5cm}}
 		attribut & beschreibt Daten die von den Objekten der Klasse angenommen werden
 		können.\\
 		& alle Objekte einer Klasse haben dieselben Attribute, können
@@ -14,10 +14,11 @@
 		klassenoperation & eine Operation, die der jeweiligen Klasse zugeordnet ist\\
 		& kann nicht auf ein einzelnes Objekt der Klasse angewendet werden\\
 		verhalten & das Verhalten der Klasse ist die Menge aller operationen\\
+		abstrakte & von einer Abstrakten Klasse können keine Objekte erzeugt werden\\
 	\end{tabular}
 \subsection{Objekt}
 	Ein Objekt wird aus einer Klasse erzeugt, ist also ein Exemplar einer Klasse.\\
-	\begin{tabular}{p{3cm}p{15cm}}
+	\begin{tabular}{p{3.5cm}p{14.5cm}}
 		Zustand & bestimmt durch seine Attributwerte und seine Objektbeziehungen zu
 		anderen Objekten\\
 		Verhalten (behavior) & die beobachtbaren Effekte aller Operationen\\
@@ -25,9 +26,61 @@
 		reagieren.\\
 		Objektidendität & jedes Objekt besitzt eine, sind unique\\
 	\end{tabular}
-\subsection{Paket}
 \subsection{Komponente}
+Ist ein Softwarebaustein, der über klar definierte Schnittstellen Verhalten
+(Funktionalität) bereitstellt.
+interface
+component
+
 \subsection{Assoziation}
+	modelliert Objektbeziehungen zwischen Objekten einer oder mehrerer Klassen. Jede
+	Assoziation wird durch Mutliplizitäten, einen optionalen Namen oder Rollennamen
+	beschrieben.\\
+	\begin{tabular}{p{3.5cm}p{14.5cm}}
+		ternäre Assoziation & Assoziation zwischen 3 Objekten.\\
+		n-äre Assoziation & zwischen n Objekten\\
+		reflexive Assoziation & verbindet zwei Objekte einer Klasse\\
+		binäre Assoziation & verbindet zwei Objekte \\
+		Assoziationsklasse & besitzt die Eigenschaften einer Assoziation und einer
+		Klasse \\
+		Aggregation & Sonderfall der Ass. "`ist Teil von"' oder "`besteht aus"'.\\
+		Komposition & besondere Form der Aggregation. Beim Löschen müssen auch alle
+		Teile gelöscht werden. Jedes Teil kann nur zu einem Ganzen gehören.\\
+		Navigationsrichtung & das erzeugen des einen erzwingt die Erzeugung des
+		anderen\\
+		Multiplizität & bezeichnet die Wichtigkeit der Assoziation. Bezeichnet die
+		Anzahl der an der Assoziation beteiligten Objekte.\\
+		abgeleitete Assoziation &
+		die Abhängigkeiten sind bereits durch andere Assoziationen beschrieben worden\\
+		Assoziationname & beschreibt im Allgemeinen nur eine Richtung der
+		Assoziation. kann fehlen wenn captain obvious unterwegs ist\\ 
+		Leserichtung & angabe beim Assoziationsnamen\\ 
+		Sichtbarkeit & Vor den Rollennamen geschrieben. -private \#protected +public
+		$\sim$ package\\ 
+		Eigenschaftswert & kann bei Bedarf ans Assoziationsende geschrieben werden.
+		Ordned.\\
+		Rollenname & bei der Klasse, deren Bedeutung sie beschreibt. Kann zur
+		verständlichkeit Beitragen\\
+	\end{tabular}
+
 \subsection{Generalisierung}
+Beschreibt die Beziehung zwischen einer allgemeinen Klasse (Basisklasse) und
+einer spezialisierten Klasse. Die spezialisierte Klasse ist vollständig
+konstistent mit der Basisklasse, enthält aber zusätzliche Informationen
+(Attribute, Operationen, Assoziationen).\\
+	\begin{tabular}{p{3.5cm}p{14.5cm}}
+		Vererbung & Unterklasse kann alle eigenschaften als Oberklasse mitbenutzen\\
+		Einfachvererbung & \\
+		Mehrfachvererbung & \\
+		Generalisierung & Die spezialisierte Klasse erweitert die Liste der Attribute,
+		Operationen und Assoziationen der Basisklasse\\
+		Generalisierungsmenge & spezifiziert, nach welchen Kriterien eine
+		Generalisierung modelliert wird\\
+	\end{tabular}
+	
 \subsection{Use-Case Diagramm}
-\subsection{Aktivitätsdiagramm}
+	Ein Use-Case spezifiziert eine Sequenz von Aktionen
+	\begin{tabular}{p{3.5cm}p{14.5cm}}
+		Akteur & ist eine Rolle, die ein Benutzer des Systems spielt. Jeder Akteur hat
+		einen Einfluss uaf das System. Befindet sich stets ausserhalb des Systems\\
+	\end{tabular}
