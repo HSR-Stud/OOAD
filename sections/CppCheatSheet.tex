@@ -1,1 +1,190 @@
 \section{C++ CheatSheet}
+
+\subsection{Header Files}
+\begin{multicols}{2}
+	\textbf{Include-Guard:}
+	\begin{lstlisting}
+	#if !defined(MeinHeader_H)
+	#define MeinHeader_H
+	// Ganzer Inhalt vom Header
+	#endif
+	\end{lstlisting}
+	
+	\textbf{Header und using namespace:} \\
+	Kein \lstinline!using namespace std;! Wenn eine Funktion aus
+	dem diesem Namespace gebraucht wird kann mit dem vollen Namen darauf
+	zugegriffen werden. (\lstinline!std::cout << "..." << std::endl;!)
+\end{multicols}
+
+
+\subsection{Unterschied Statisch - Dynamisch}
+\begin{multicols}{2}
+\textbf{Statisch:}
+\begin{lstlisting}
+ClassA a;
+a.foo(); // Funktionsaufruf
+bar(&a); // Uebergabe von this
+\end{lstlisting}
+
+\textbf{Dynamisch:} 
+\begin{lstlisting}
+ClassA* a = new A();
+a->foo(); // Funktionsaufruf
+bar(a); // Uebergabe von this
+\end{lstlisting}
+\end{multicols}
+
+\subsection{Assoziationen}
+\subsubsection{"`0..1:0..1"'}
+\begin{multicols}{2}
+\textbf{Header A:}
+\begin{lstlisting}
+class B; // Vorwaertsdeklaration
+
+class A{
+	private:
+		B* mB; // Pointer auf B-Objekt
+	
+	public:
+	    A();
+		void setB(B* pB);
+		B* getB();
+};
+\end{lstlisting}
+
+\textbf{Implementation:}
+\begin{lstlisting}
+void A::setB(B* pB) {
+	mB = pB;
+}
+\end{lstlisting}
+
+\columnbreak
+
+\textbf{Header B:}
+\begin{lstlisting}
+class A; // Vorwaertsdeklaration
+
+class B {
+	private: 
+		A* mA; // Pointer auf A-Objekt
+		
+	public:
+		B();
+		void setA(A* pA);
+		A* getA();
+};
+\end{lstlisting}
+
+\textbf{Aufruf:}
+\begin{lstlisting}
+A a;
+B b;
+a.setB(&b);
+\end{lstlisting}
+\end{multicols}
+
+\subsection{"`1:0..1"'}
+Eine 1:0..1 Assoziation kann ähnlich wie eine 0..1:0..1 Assoziation
+implementiert weden. Wobei auf der "`1 Seite"' die andere Klasse direkt im
+Konstruktor mitgegeben wird. Ein Setter wird auf der B-Seite nicht mehr
+gebraucht! Achtung: untenstehende Implementation zeigt nur schematisch auf wie
+es funktioniert. Copy- und Zuweisungskonstruktor müssten auch noch korrekt
+implementiert werden.
+\begin{multicols}{2}
+\textbf{Header B ("`1 Seite"')}
+\begin{lstlisting}
+// ...
+class B {
+	private:
+		A* mA;
+		B();
+	public: 
+		A* getA();		
+}
+\end{lstlisting}
+\columnbreak
+\textbf{Implementation B ("`1 Seite"')}
+\begin{lstlisting}
+B::B(B* pA)
+: mA(pA)
+{
+	mA->setB(this);
+}
+\end{lstlisting}
+\end{multicols}
+
+\newpage
+
+\subsection{"`0..1:0..n"'}
+\begin{multicols}{2}
+\textbf{Header A:}
+\begin{lstlisting}
+class B; // Vorwaertsdeklaration
+
+class A{
+	private:
+		B* mB[n-1]; // Pointerarray auf B-Objekte
+	
+	public:
+	    A();
+		void addB(B* pB);
+		void removeB(B* pB);
+		B* getB(int uniqueBValue );
+};
+\end{lstlisting}
+
+\textbf{Implementation:}
+\begin{lstlisting}
+A:A() {
+	for(int i = 0; i<n; i++) {
+		// Alle Werte auf 0 initialisieren
+		mB[i] = 0; 
+	}
+}
+
+// fuer removeB sinngemaess mit entfernen und 0 setzten
+void A::addB(B* pB) {
+	for(int i = 0; i<n; i++) {
+		if(mB[i] == 0) {
+			mB[i] = pB;
+			mB[i]->setA(this);
+			break;
+		}
+	}
+}
+\end{lstlisting}
+
+\columnbreak
+
+\textbf{Header B:}
+\begin{lstlisting}
+class A; // Vorwaertsdeklaration
+
+class B {
+	private: 
+		A* mA; // Pointer auf A-Objekt
+		
+	public:
+		B();
+		void setA(A* pA);
+		A* getA();
+		
+};
+\end{lstlisting}
+
+\textbf{Aufruf:}
+\begin{lstlisting}
+A a;
+B b1;
+B b2;
+a.addB(&b1);
+a.addB(&b2);
+a.remove(&b2);
+// ...
+\end{lstlisting}
+\end{multicols}
+
+
+
+
