@@ -1,7 +1,8 @@
 \section{Begriffe}
 \subsection{Klasse}
-	Eine Klasse ist eine Vorlage für ein Objekt.\\
-	\begin{description}[style=multiline,leftmargin=3.5cm,rightmargin=2cm, topsep=0pt]
+	Eine Klasse ist eine Vorlage für ein Objekt.
+	\begin{description}[style=multiline,leftmargin=4.5cm,rightmargin=2cm,
+	topsep=0pt]
 	\item[Attribut] Beschreibt Daten die von den Objekten der Klasse angenommen
 		werden können. Alle Objekte einer Klasse haben dieselben Attribute, können
 		aber unterschiedliche Attributwerte haben.
@@ -20,14 +21,16 @@
 	
 \subsection{Objekt}
 	Ein Objekt wird aus einer Klasse erzeugt, ist also ein Exemplar einer Klasse.
-	\begin{description}[style=multiline,leftmargin=3.5cm,rightmargin=2cm, topsep=0pt]
-		\item[Zustand] bestimmt durch seine Attributwerte und seine
-		Objektbeziehungen zu anderen Objekten
-		\item[Verhalten (behavior)] die beobachtbaren Effekte aller Operationen
-		 bestimmt durch die Operationsaufrufe, auf die diese Klasse bzw. deren Objekte
-		reagieren.
-		\item[Objektidendität] jedes Objekt besitzt eine, sind unique
+	\begin{description}[style=multiline, leftmargin=4.5cm, rightmargin=2cm,
+		topsep=0pt]
+		\item[Zustand] Bestimmt durch seine Attributwerte und seine Objektbeziehungen
+			zu anderen Objekten
+		\item[Verhalten] Die beobachtbaren Effekte aller Operationen bestimmt durch
+			die Operationsaufruf, auf die diese Klasse bzw. deren Objekte reagieren.
+		\item[Objektidentität] jedes Objekt hat eine Identität, welche einzigartig ist
+			(unique)
 	\end{description}
+	
 \subsection{Komponente}
 Ist ein Softwarebaustein, der über klar definierte Schnittstellen Verhalten
 (Funktionalität) bereitstellt.
@@ -35,36 +38,37 @@ interface
 component
 
 \subsection{Assoziation}
-	modelliert Objektbeziehungen zwischen Objekten einer oder mehrerer Klassen. Jede
-	Assoziation wird durch Mutliplizitäten, einen optionalen Namen oder Rollennamen
-	beschrieben.\\
-	\begin{description}[style=multiline,leftmargin=3.5cm,rightmargin=2cm, topsep=0pt]
-		\item[ternäre Assoziation] Assoziation zwischen 3 Objekten.
-		\item[n-äre Assoziation] zwischen n Objekten
-		\item[reflexive Assoziation ] verbindet zwei Objekte einer Klasse
-		\item[binäre Assoziation] verbindet zwei Objekte 
-		\item[Assoziationsklasse] besitzt die Eigenschaften einer Assoziation und
-		einer Klasse 
-		\item[Aggregation] Sonderfall der Ass. "`ist Teil von"' oder "`besteht
+	Modelliert Objektbeziehungen zwischen Objekten einer oder mehrerer Klassen.
+	Jede Assoziation wird durch Mutliplizitäten, einen optionalen Namen oder Rollennamen
+	beschrieben.
+	\begin{description}[style=multiline, leftmargin=4.5cm, rightmargin=2cm,
+		topsep=0pt]
+	\item[binäre Assoziation] Assoziation zwischen 2 Objekten
+	\item[ternäre Assoziation] Assoziation zwischen 3 Objekten
+	\item[n-äre Assoziation] zwischen n Objekten
+	\item[reflexive Assoziation] Verbindet zwei Objekte der gleichen Klasse
+	\item[Assoziationsklasse] Besitzt die Eigenschaften einer Assoziation und einer
+		Klasse
+	\item[Aggregation] Sonderfall der Assoziation. "`ist Teilvon"' oder "`besteht
 		aus"'.
-		\item[Komposition] besondere Form der Aggregation. Beim Löschen müssen auch
-		alle Teile gelöscht werden. Jedes Teil kann nur zu einem Ganzen gehören.
-		\item[Navigationsrichtung] das erzeugen des einen erzwingt die Erzeugung des
-		anderen
-		\item[Multiplizität] bezeichnet die Wichtigkeit der Assoziation. Bezeichnet
-		die Anzahl der an der Assoziation beteiligten Objekte.
-		\item[abgeleitete Assoziation]
-		die Abhängigkeiten sind bereits durch andere Assoziationen beschrieben worden
-		\item[Assoziationname] beschreibt im Allgemeinen nur eine Richtung der
-		Assoziation. kann fehlen wenn captain obvious unterwegs ist
-		\item[Leserichtung] angabe beim Assoziationsnamen
-		\item[Sichtbarkeit] Vor den Rollennamen geschrieben. -private \#protected
-		+public $\sim$ package
-		\item[Eigenschaftswert] kann bei Bedarf ans Assoziationsende geschrieben
-		werden. Ordnend.
-		\item[Rollenname] bei der Klasse, deren Bedeutung sie beschreibt. Kann zur
-		verständlichkeit Beitragen
-	\end{description}
+	\item[Komposition] besondere Form der Aggregation. Beim löschen müssen auch
+		alle Teile gelöscht werden. Jedes Teil kann nur zu einem Ganzen gehören 
+	\item[Navigationsrichtung] Das erzeugen des einen erzwingt die Erzeugung des
+		Anderen
+	\item[Multiplizität] Bezeichnet die Wichtigkeit derAssoziation. Bezeichnet die
+		Anzahl der an der Assoziation beteiligten Objekte.
+	\item[abgeleitete Assoziation] Die Abhängigkeiten sind bereits durch andere
+		Assoziationen beschrieben worden.
+	\item[Assoziationsname] Beschreibt im Allgemeinen nur eine Richtung der
+		Assoziation. Kann fehlen wenn captian obvious unterwegs ist.
+	\item[Leserichtung] Angabe beim Assoziationsnamen
+	\item[Sichtbarkeit] Vor dem Rollenname geschriben. -private \#protected +public
+		$\sim$package
+	\item[Eigenschaftswert] Kann bei Bedarf an das Assoziationsende geschrieben
+		werden. (z.B.: Ordnend)
+	\item[Rollenname] Bei der Klasse, deren Bedeutung sie beschreibt. Kann zur
+		Verständlichkeit beitragen.
+\end{description}
 
 \subsection{Generalisierung}
 Beschreibt die Beziehung zwischen einer allgemeinen Klasse (Basisklasse) und
