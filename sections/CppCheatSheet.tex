@@ -149,7 +149,7 @@ void A::addB(B* pB) {
 		if(mB[i] == 0) {
 			mB[i] = pB;
 			mB[i]->setA(this);
-			break;
+			return;
 		}
 	}
 }
