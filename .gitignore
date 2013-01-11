@@ -1,7 +1,5 @@
 /*.pdf
-/*.aux
+*.aux
 /*.log
 /*.out
 /*.gz
-sections/CppCheatSheet.aux
-sections/begriffe.aux
