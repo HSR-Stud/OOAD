@@ -1,0 +1,253 @@
+% Section OOA
+% Objekt Orientierte Analyse
+
+\section{OOA}
+
+\subsection{Ziel der Analyse}
+  \begin{itemize}[leftmargin = 0.5cm]
+    \item Wünsche und Anforderungen an  ein neues System ermitteln und beschreiben
+    \item Bei Modellbildung bewusst \textbf{alle} Aspekte der Implementierung ausklammern
+    \item System als ideal anschauen. D.h keine Verzögerungen, keine Fehler, unendlicher Speicher
+  \end{itemize}
+  
+\subsection{Zeil der OOA}
+  Ziel ist es, das zu realisierende Problem zu verstehen und in einem OOA-Modell zu beschreiben.
+  
+\subsection{OOA Modelle}
+  \begin{description}
+    \item[statisches Modell] 
+      beschreibt $\ldots$
+      \begin{description}[leftmargin=0.5cm]
+        \item[$\ldots$] die Klassen des Systems
+        \item[$\ldots$] die Assoziation zwischen den Klassen
+        \item[$\ldots$] die Generalisierung (Vererbung)
+      \end{description}
+      ausserdem enthält es die Daten des Systems (Attribute)
+     
+    \item[dynamisches Modell]
+      \begin{itemize}[leftmargin=0.5cm]
+        \item zeigt die Funktionsabläufe
+        \item Use-Cases beschreiben die durchzuführenden Aufgaben
+        \item Aktivität beschreibt die Ausführung von Funktionalität und Verhalten
+        \item Szenario zeigen wie Objekte miteinander kommunizieren
+        \item Zustandsautomaten beschreiben in der Analyse die Reaktion eines Objektes auf verschiedne Ereignisse
+      \end{itemize}
+      
+    \item[OOA-Modell]
+      \begin{itemize}[leftmargin=0.5cm]
+        \item beschreibt die essenzielle Struktur und Semantik des Problems, aber noch keine technische Beschreibung
+        \item enthält keinerlei Optimierung für das verwendete Computersystem oder die benutzte Basissoftware
+        \item bildet fachliche Lösung des zu realisierenden Systems
+      \end{itemize}
+      
+    \item[primitive Datentypen]
+      \begin{itemize}[leftmargin=0.5cm]
+        \item Boolean
+        \item String
+        \item Integer
+        \item UnlimitedNatural
+      \end{itemize}
+  \end{description}
+  
+\subsection{Attribut \balzert{26}}
+  \begin{description}
+    \item[Attribut] 
+      Beschreibt Daten die von den Objekten der Klasse angenommen
+      werden können. Alle Objekte einer Klasse haben dieselben Attribute, können
+      aber unterschiedliche Attributwerte haben.
+    \item[Klassenattribut] 
+      enn nur ein Attributwert für alle Objekte einer Klasse
+      existiert. Sie existieren auch, wenn es zu einer Klasse noch keine Objekte gibt.
+    \item[abgeleitets Attribut]
+      kann zu jeder Zeit aus anderen Attributwerten berechnet werden. Wird mit \textbf{/zahl} geschrieben.  
+    \item[Eigenschaftswerte von Attributen]
+      siehe \Balzert{29}      
+    \item[Multiplizität]
+      [0..n] $\rightarrow$ spezifiziert, [0..*] $\rightarrow$ unspezifiziert
+  \end{description}
+  
+\subsection{Klasse \balzert{23}}
+  Eine Klasse ist eine Vorlage für ein Objekt.
+  \begin{description}
+    \item[Operation] 
+      Eine Funktion die auf alle Attributwere eines Objekts Zugriff hat.
+    \item[Klassenoperation] 
+      Eine Operation, die der jeweiligen Klasse zugeordnet ist kann nicht auf 
+      ein einzelnes Objekt der Klasse angewendet werden kann. 
+    \item[Verhalten] 
+      Das Verhalten der Klasse ist die Menge aller Operationen
+    \item[Abstrakte] 
+      Von einer abstrakten Klasse können keine Objekte erzeugt werden.
+    \item[Basisklasse] 
+      Vererbt abgeleiteten Klassen Attribute und Operationen
+  \end{description}
+  
+\subsection{Objekt \balzert{20}}
+	Ein Objekt wird aus einer Klasse erzeugt, ist also ein Exemplar einer Klasse.
+	\begin{description}
+		\item[Zustand] 
+      Bestimmt durch seine Attributwerte und seine Objektbeziehungen zu anderen Objekten
+		\item[Verhalten] 
+      Die beobachtbaren Effekte aller Operationen bestimmt durch die Operationsaufruf, 
+      auf die diese Klasse bzw. deren Objekte reagieren.
+		\item[Objektidentität] 
+      jedes Objekt hat eine Identität, welche einzigartig ist (unique)
+	\end{description}
+	
+\subsection{Komponente}
+  Ist ein Softwarebaustein, der über klar definierte Schnittstellen Verhalten (Funktionalität) bereitstellt.
+  interface component
+  
+\subsection{Assoziation \balzert{42}}
+	Modelliert Objektbeziehungen zwischen Objekten einer oder mehrerer Klassen.
+	Jede Assoziation wird durch Mutliplizitäten, einen optionalen Namen oder Rollennamen
+	beschrieben.
+  \begin{description}
+    \item[binäre Assoziation] 
+      Assoziation zwischen 2 Objekten
+    \item[ternäre Assoziation] 
+      Assoziation zwischen 3 Objekten
+    \item[n-äre Assoziation] 
+      zwischen n Objekten
+    \item[reflexive Assoziation] 
+      Verbindet zwei Objekte der gleichen Klasse
+    \item[Assoziationsklasse]
+      \parbox{5cm}{Besitzt die Eigenschaften einer Assoziation und einer Klasse}
+      \hspace{0.5cm}
+      \parbox{9cm}{\includegraphics[width=6cm]{./bilder/Assoziationsklasse.png}}
+    \parbox{6cm}{
+      \item[Aggregation] 
+        Sonderfall der Assoziation. "`ist Teilvon"' oder "`besteht aus"'.
+      \item[Komposition] 
+        starke Form der Aggregation. Beim löschen werden alle Teile gelöscht werden. 
+        Jedes Teil kann nur zu einem Ganzen gehören}
+    \parbox{9cm}{\includegraphics[width=6cm]{./bilder/Aggregation_Komposition.png}}
+    \item[Navigationsrichtung] 
+      Das erzeugen des einen erzwingt die Erzeugung des Anderen
+    \item[Multiplizität]
+      \parbox{5cm}{Bezeichnet die Anzahl der an der Assoziation beteiligten Objekte.}
+      \hspace{0.5cm}
+      \parbox{9cm}{\includegraphics[width=6cm]{./bilder/Notation_Multiplizitaet.png}}
+    \item[abgeleitete Assoziation] 
+      Die Abhängigkeiten sind bereits durch andere Assoziationen beschrieben worden.
+      Präfix "`\textbf{/}"'
+    \item[Assoziationsname] 
+      Beschreibt im Allgemeinen nur eine Richtung der Assoziation. 
+    \item[Leserichtung] 
+      Angabe beim Assoziationsnamen. Wird mit ausgefülltem schwarzem Dreieck ($\RHD$) dargestellt.
+    \item[Sichtbarkeit] 
+      Vor dem Rollenname geschriben. -private \#protected +public $\sim$package
+    \item[Eigenschaftswert der Assoziation] 
+      OOA: siehe \Balzert{45}\\
+      OOD: siehe \Balzert{288}
+      
+    \parbox{5cm}{
+      \item[Rolle]
+        Information oder die Bedeutung/Funktion einer Klasse in Beziehung zu einer anderen.
+      \item[Rollenname]
+        Jeweils am Ende der Assoziationsrichtung von der Klasse, 
+        deren Bedeutung sie beschreibt. Kann zur Verständlichkeit beitragen.}
+    \hspace{0.5cm}
+    \parbox{8cm}{\includegraphics[width=8cm]{./bilder/Rolle.png}}
+  \end{description}
+
+\subsection{Generalisierung (Vererbung) \balzert{52}}
+  Beschreibt die Beziehung zwischen einer allgemeinen Klasse (Basisklasse) und
+  einer spezialisierten Klasse. Die spezialisierte Klasse ist vollständig
+  konstistent mit der Basisklasse, enthält aber zusätzliche Informationen
+  (Attribute, Operationen, Assoziationen). Jedes Objekt der Unterklasse \textbf{ist ein} 
+  Objekt der Oberklasse.
+  
+  \begin{description}
+    \item[Einfachvererbung]
+    \item[Mehrfachvererbung]
+    \item[Generalisierung] 
+      Die spezialisierte Klasse erweitert die Liste der
+      Attribute, Operationen und Assoziationen der Basisklasse
+    \item[Generalisierungsmenge] 
+      spezifiziert, nach welchen Kriterien eine Generalisierungstruktur erstellt wird.
+      (z.B. nach Tätigkeit, Job, etc.)
+  \end{description}
+
+\subsection{Aktivität \balzert{69}}
+  Eine Aktivität beschreibt die Auführung von Funktionalität bzw. Verhalten.
+
+\subsection{Zustandsautomat \balzert{87}}
+  Zustandsdiagramm (finit state diagram)
+ 
+
+\newpage
+
+\subsection{Use-Case Diagramm \balzert{62}}
+	Ein Use-Case spezifiziert eine Sequenz von Aktionen
+	\begin{description}[leftmargin=2cm]
+		\item[Akteur]
+      \parbox{6cm}{
+        ist eine Rolle, die ein Benutzer des Systems spielt. Jeder Akteur hat einen 
+        Einfluss uaf das System. Befindet sich stets ausserhalb des Systems}
+      \hspace{0.5cm}
+      \parbox{9cm}{\includegraphics[width=9cm]{./bilder/UseCase_Notation.png}}
+    \item[Schablone]
+      \begin{itemize}[leftmargin=4cm]
+        \item[\textit{Ziel:}]
+          globlae Zielsetzung bei erfolgreicher Ausführung des Geschäftsprozesses.
+        \item[\textit{Kategroie:}]
+          primär, sekundär, optional
+        \item[\textit{Vorbedingung:}]
+          erwarteter Zustand, bevor der Use-Case beginnt.
+        \item[\textit{Nachbedingung Erfolg:}]
+          erwarteter Zustand, nach erfolgreicher Ausführung des Use-Cases (Ergebnis)
+        \item[\textit{Nachbedingung Fehlschlag:}]
+          erwarteter Zustand, wenn das Ziel nicht erreicht werden kann
+        \item[\textit{Akteure:}]
+          Rollen von Personen oder anderen Systeme, die den Use-Case auslösen
+          oder daran beteiligt sind.
+        \item[\textit{Auslösendes Ereignis:}]
+          Wenn dieses Ereignis eintritt, dannn wird der Use-Case initiiert.
+        \item[\textit{Beschreibung:}]
+          \begin{enumerate}[leftmargin=0.5cm]
+            \item Erste Aktion
+            \item Zweite Aktion
+          \end{enumerate}
+        \item[\textit{Erweiterungen:}]
+          \begin{enumerate}[leftmargin=0.5cm]
+            \item[1a] Erweiterung des Funktionsumfangs der ersten Aktion
+          \end{enumerate}
+        \item[\textit{Alternativen:}]
+          \begin{enumerate}[leftmargin=0.5cm]
+            \item[1a] Alternative Ausführung der ersten Aktion
+            \item[1b] Weitere Alternativen zur ersten Aktion
+          \end{enumerate}
+        \item[\Balzert{68}]
+      \end{itemize}
+	\end{description}
+
+
+\subsection{Szenario \balzert{80}}
+  Ein Szenario ist eine Sequenz von Verarbeitungsschritten, die unter bestimmten
+  Bedingungen auszuführen ist.\\
+  Die Szenarien lassen sich in zwei Kategorien unterteilen, die die eine erfolgreiche Bearbeitung
+  des Use-Case beschreiben und jene Szenarien welche zu einem Fehlschlag führen. \\
+  
+  \textbf{Diagrammübersicht:}
+  \begin{itemize}[leftmargin=0.5cm]
+    \item Sequenzdiagramm $\rightarrow$ siehe \Balzert{81}
+    \item Kommunikationsdiagramm $\rightarrow$ siehe \Balzert{85}
+    \item Timing-Diagramm
+    \item Interaktionsübersichtsdiagram
+  \end{itemize}
+  
+\subsection{Analyseprozess \balzert{130}}
+  Der Analyseprozess beschreibt die methodeische Vorgehensweise zur Erstellung eines
+  obejektorientierten Analysemodells.\\
+  
+  Es besteht aus
+  \begin{description}
+    \item[Markoprozess]
+      Der Makroprozess legt die methodischen Schritte fest, sprich in welcher
+      Reihenfolge die Checklisten abgearbeitet werden $\rightarrow$ siehe \Balzert{132}
+    \item[Checklisten]
+      siehe \Balzert{133}
+  \end{description}
+  
+  
