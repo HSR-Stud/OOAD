@@ -1,39 +1,66 @@
 \section{Begriffe}
-\subsection{Klasse}
-	Eine Klasse ist eine Vorlage für ein Objekt.
+
+\subsection{Objekt \balzert{20}}
+	Ein Objekt wird aus einer Klasse erzeugt, ist also ein Exemplar einer Klasse. Generell
+	ist ein Objekt ein Gegenstand des Interesses, eine Beobachtung usw. Oft wird als
+	Synonym auch Instanz verwendet.
 	\begin{description}
-	\item[Attribut] Beschreibt Daten die von den Objekten der Klasse angenommen
-		werden können. Alle Objekte einer Klasse haben dieselben Attribute, können
-		aber unterschiedliche Attributwerte haben.
-	\item[Klassenattribut] wenn nur ein Attributwert für alle Objekte einer Klasse
-		existiert. Sie existieren auch, wenn es zu einer Klasse noch keine Objekte
-		gibt.
-	\item[Operation] Eine Funktion die auf alle Attributwere eines Objekts Zugriff
-		hat.
-	\item[Klassenoperation] Eine Operation, die der jeweiligen Klasse zugeordnet
-		ist kann nicht auf ein einzelnes Objekt der Klasse angewendet werden. 
-	\item[Verhalten] Das Verhlaten der Klasse ist die Menge aller Operationen
-	\item[Abstrakte] Von einer abstrakten Klasse können keine Objekte erzeugt
-		werden.
-	\item[Basisklasse] Vererbt abgeleiteten Klassen Attribute und Operationen
-	\end{description}
-	
-\subsection{Objekt}
-	Ein Objekt wird aus einer Klasse erzeugt, ist also ein Exemplar einer Klasse.
-	\begin{description}
-		\item[Zustand] Bestimmt durch seine Attributwerte und seine Objektbeziehungen
-			zu anderen Objekten
-		\item[Verhalten] Die beobachtbaren Effekte aller Operationen bestimmt durch
-			die Operationsaufruf, auf die diese Klasse bzw. deren Objekte reagieren.
+		\item[Zustand] Der Zustand umfasst die Attribute, ihre aktuellen Werte, sowie
+			die Objektbeziehungen (\textit{links}).
+		\item[Verhalten] Das Verhalten wird durch die Operationen beschrieben. Eine
+			Änderung des Zustands ist nur durch Operationen möglich.
 		\item[Objektidentität] jedes Objekt hat eine Identität, welche einzigartig ist
 			(unique)
 	\end{description}
+	\subsubsection{Notation}
+		Objektnamen werden immer klein geschrieben und unterstrichen. \\
+		\begin{tabular}{l l}
+			\underline{:Klasse} & anonymes Objekt \\
+			\underline{objekt:Klasse} & Objekt wird über Namen angesprochen \\
+			\underline{objekt} & wenn Objektname zur Identifikation ausreicht \\
+		\end{tabular}\\
+	\begin{multicols}{2}	
+	\subsubsection{Geheimnisprinzip}
+	Daten sind nach aussen verborgen und können nur über Operationen gelesen oder geändert werden.\\
+	\subsubsection{Objektidentität}
+	Eigenschaft, die ein Objekt von allen anderen Objekten unterscheidet. Bei zwei Objekten
+	mit gleichen Attributwerten sprechen wir von Gleichheit, wenn dasselbe Objekt gemeint
+	ist von Identität.
+	\end{multicols}
+	
+	\subsection{Klasse \balzert{23}}
+	Eine Klasse ist eine Vorlage für ein Objekt. \\
+	\begin{minipage}[t]{4cm}\includegraphics[width=4cm]{./images/klasse.png}\end{minipage}
+	\begin{minipage}[c]{16cm}
+		\begin{description}
+		\item[Attribut] Beschreibt Daten die von den Objekten der Klasse angenommen
+			werden können. Alle Objekte einer Klasse haben dieselben Attribute, können
+			aber unterschiedliche Attributwerte haben.
+		\item[Klassenattribut] wenn nur ein Attributwert für alle Objekte einer Klasse
+			existiert. Sie existieren auch, wenn es zu einer Klasse noch keine Objekte
+			gibt.
+		\item[Operation] Eine Funktion die auf alle Attributwere eines Objekts Zugriff
+			hat.
+		\item[Klassenoperation] Eine Operation, die der jeweiligen Klasse zugeordnet
+			ist kann nicht auf ein einzelnes Objekt der Klasse angewendet werden. 
+		\item[Verhalten] Das Verhlaten der Klasse ist die Menge aller Operationen
+		\item[Abstrakte] Von einer abstrakten Klasse können keine Objekte erzeugt
+			werden. Abstrakte Klassen werden durch kursiven Klassennamen oder mittels
+			\{abstract\} gekennzeichnet.
+		\item[Basisklasse] Vererbt abgeleiteten Klassen Attribute und Operationen
+		\end{description}
+	\end{minipage}
+	\subsubsection{Notation}
+		Der \textbf{Klassenname} ist immer ein Substantiv im Singular, das durch ein Adjektiv
+		ergänzt werden kann. Der Klassenname wird fett geschrieben und beginnt mit einem
+		Grossbuchstaben. \\
+		
 	
 \subsection{Komponente}
-Ist ein Softwarebaustein, der über klar definierte Schnittstellen Verhalten
-(Funktionalität) bereitstellt.
-interface
-component
+	Ist ein Softwarebaustein, der über klar definierte Schnittstellen Verhalten
+	(Funktionalität) bereitstellt.
+	interface
+	component
 
 \subsection{Assoziation}
 	Modelliert Objektbeziehungen zwischen Objekten einer oder mehrerer Klassen.
@@ -83,9 +110,3 @@ konstistent mit der Basisklasse, enthält aber zusätzliche Informationen
 		Generalisierung modelliert wird
 	\end{description}
 	
-\subsection{Use-Case Diagramm}
-	Ein Use-Case spezifiziert eine Sequenz von Aktionen
-	\begin{description}
-		\item[Akteur] ist eine Rolle, die ein Benutzer des Systems spielt. Jeder
-		Akteur hat einen Einfluss uaf das System. Befindet sich stets ausserhalb des Systems\\
-	\end{description}

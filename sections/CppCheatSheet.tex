@@ -98,7 +98,7 @@ implementiert werden.
 class B {
 	private:
 		A* mA;
-		B();
+		B(A* pA);
 	public: 
 		A* getA();		
 }
@@ -106,7 +106,7 @@ class B {
 \columnbreak
 \textbf{Implementation B ("`1 Seite"')}
 \begin{lstlisting}
-B::B(B* pA)
+B::B(A* pA)
 : mA(pA)
 {
 	mA->setB(this);

@@ -2,8 +2,8 @@
 % Dokumentinformationen %
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\titleinfo}{OOAD - Formelsammlung}
-\newcommand{\authorinfo}{J\"urg \& DIE Schweisser}
-\newcommand{\versioninfo}{$Revision: 1 $}  
+\newcommand{\authorinfo}{J\"urg \& Co}
+\newcommand{\versioninfo}{$Revision: 2 $ - powered by \LaTeX}  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Standard projektübergreifender Header für
@@ -25,6 +25,7 @@
 
 \usepackage{listings}
 %\usepackage{textcomp}
+\newcommand{\balzert}[1]{$_{\textcolor{red}{\mbox{\small{Balzert S. #1}}}}$}
 \definecolor{lbcolor}{rgb}{0.92,0.92,0.92}
 \lstset{
 	backgroundcolor=\color{lbcolor},
@@ -52,4 +53,5 @@
 \begin{document}
 \include{sections/CppCheatSheet}
 \include{sections/begriffe}
+\include{sections/diagramme}
 \end{document}
