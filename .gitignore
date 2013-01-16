@@ -1,0 +1,5 @@
+*.aux
+*.pdf
+*.synctex*
+*.log
+.DS_STORE
