@@ -15,6 +15,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{header/header}
 \usepackage{enumitem}
+\usepackage{wasysym}
 
 \setlist{
 	style=multiline,
@@ -27,7 +28,7 @@
 %\usepackage{textcomp}
 \definecolor{lbcolor}{rgb}{0.92,0.92,0.92}
 \lstset{
-	backgroundcolor=\color{lbcolor},
+	backgroundcolor=\color{white},
 	tabsize=4,
 	rulecolor=,
 	language=c++,
@@ -49,7 +50,15 @@
     stringstyle=\color[rgb]{0.627,0.126,0.941},
 }
 
+\newcommand{\balzert}[1]{$_{\textcolor{red}{\mbox{\small{Balzert S.#1}}}}$}
+\newcommand{\Balzert}[1]{${\textcolor{red}{\mbox{Balzert S.#1}}}$}
+
 \begin{document}
+\maketitle
+\tableofcontents
+
 \include{sections/CppCheatSheet}
-\include{sections/begriffe}
+\include{sections/OOA}
+\include{sections/OOD}
+
 \end{document}
