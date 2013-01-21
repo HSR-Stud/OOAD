@@ -37,18 +37,20 @@ bar(a); // Uebergabe von this
 \subsection{Assoziationen}
 \subsubsection{"`0..1:0..1"'}
 \begin{multicols}{2}
+Vorwärtsdekleration wird gebraucht, wenn zwei Klassen sich gegenseitig referenzieren. \\
+
 \textbf{Header A:}
 \begin{lstlisting}
 class B; // Vorwaertsdeklaration
 
 class A{
-	private:
-		B* mB; // Pointer auf B-Objekt
-	
 	public:
 	    A();
 		void setB(B* pB);
 		B* getB();
+		
+	private:
+		B* mB; // Pointer auf B-Objekt
 };
 \end{lstlisting}
 
@@ -60,19 +62,20 @@ void A::setB(B* pB) {
 \end{lstlisting}
 
 \columnbreak
+\includegraphics[width=5cm]{./bilder/Assozi_01_01.png}
 
 \textbf{Header B:}
 \begin{lstlisting}
 class A; // Vorwaertsdeklaration
 
-class B {
-	private: 
-		A* mA; // Pointer auf A-Objekt
-		
+class B {	
 	public:
 		B();
 		void setA(A* pA);
 		A* getA();
+		
+	private: 
+		A* mA; // Pointer auf A-Objekt
 };
 \end{lstlisting}
 
@@ -84,7 +87,7 @@ a.setB(&b);
 \end{lstlisting}
 \end{multicols}
 
-\subsection{"`1:0..1"'}
+\subsubsection{"`1:0..1"'}
 Eine 1:0..1 Assoziation kann ähnlich wie eine 0..1:0..1 Assoziation
 implementiert weden. Wobei auf der "`1 Seite"' die andere Klasse direkt im
 Konstruktor mitgegeben wird. Ein Setter wird auf der B-Seite nicht mehr
@@ -92,31 +95,47 @@ gebraucht! Achtung: untenstehende Implementation zeigt nur schematisch auf wie
 es funktioniert. Copy- und Zuweisungskonstruktor müssten auch noch korrekt
 implementiert werden.
 \begin{multicols}{2}
-\textbf{Header B ("`1 Seite"')}
+\includegraphics[width=5cm]{./bilder/Assozi_1_01.png}\\
+\textbf{Header B (Muss Assoziation)}
 \begin{lstlisting}
 // ...
 class B {
+	public: 
+		A* getA();
+		B(A* pa);		// Konstruktor
+	
 	private:
 		A* mA;
+<<<<<<< HEAD
 		B(A* pA);
 	public: 
 		A* getA();		
+=======
+		B();			// Default Konstruktor
+>>>>>>> NiFa18/master
 }
 \end{lstlisting}
 \columnbreak
-\textbf{Implementation B ("`1 Seite"')}
+\textbf{Implementation B (Muss Assoziation)}
 \begin{lstlisting}
 B::B(A* pA)
 : mA(pA)
 {
-	mA->setB(this);
+	mA->setB(this); 
+	// Kann auch im im Aufruf erfolgen
 }
+\end{lstlisting}
+
+\textbf{Aufruf:}
+\begin{lstlisting}
+	A a;
+	B b(&a);
 \end{lstlisting}
 \end{multicols}
 
 \newpage
 
-\subsection{"`0..1:0..n"'}
+\subsubsection{"`0..1:0..n"'}
 \begin{multicols}{2}
 \textbf{Header A:}
 \begin{lstlisting}
@@ -142,7 +161,7 @@ A:A() {
 	}
 }
 
-// fuer removeB sinngemaess (->setA(0))
+// fuer removeB sinngemaess (->setA(0); mB[i]=0)
 void A::addB(B* pB) {
 	for(int i = 0; i<n; i++) {
 		if(mB[i] == 0) {
@@ -155,7 +174,7 @@ void A::addB(B* pB) {
 \end{lstlisting}
 
 \columnbreak
-
+\includegraphics[width=5cm]{./bilder/Assozi_01_0n.png}\\
 \textbf{Header B:}
 \begin{lstlisting}
 class A; // Vorwaertsdeklaration
@@ -187,14 +206,14 @@ a.remove(&b2);
 \begin{multicols}{2}
 \textbf{Basisklasse}
 \begin{lstlisting}
-	class: Superclass
+	class: Fahrzeug
 	{
 	public:
-				Superclass(int Zahl);
-		void	setSuperzahl(int super);
+			 Fahrzeug(int pGewicht);
+		void setGewicht(int pGewicht);
 	
 	private:
-		int superzahl;
+		int gewicht;
 	};
 \end{lstlisting}
 
@@ -202,22 +221,22 @@ a.remove(&b2);
 
 \textbf{abgeleitete Klasse}
 \begin{lstlisting}
-	class:		Subclass: public Superclass
+	class: Auto : public Fahrzeug
 	{
 	public:
-				Subclass(double Zahl);	
-		void	setSubzahl(double sub);
+			 Auto(int pPersonen, int pGewicht);	
+		void setPersonen(int pPersonen);
 		
 	private:
-		double	subzahl;
+		int	personen;
 	}	
 \end{lstlisting}
 \end{multicols}
 
 \textbf{Aufruf}
 \begin{lstlisting}
-	Subclass.setSuperclass(42);
-	Subclass.setSubclass(4.2);
+	Auto.setGewicht(42);
+	Auto.setPersonen(4);
 \end{lstlisting}
 
 

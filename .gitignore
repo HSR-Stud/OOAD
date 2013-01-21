@@ -3,3 +3,10 @@
 *.synctex*
 *.log
 .DS_STORE
+/*.pdf
+*.aux
+/*.log
+/*.out
+/*.gz
+*.toc
+/tmp/*

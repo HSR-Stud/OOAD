@@ -2,8 +2,9 @@
 % Dokumentinformationen %
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\titleinfo}{OOAD - Formelsammlung}
-\newcommand{\authorinfo}{J\"urg \& Co}
-\newcommand{\versioninfo}{$Revision: 2 $ - powered by \LaTeX}  
+\newcommand{\authorinfo}{J\"urg \& DIE Schweisser, C.Gwerder, S.K\"orner}
+\newcommand{\versioninfo}{$Revision: 1 $}  
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Standard projektübergreifender Header für
@@ -15,6 +16,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{header/header}
 \usepackage{enumitem}
+\usepackage{wasysym}
 
 \setlist{
 	style=multiline,
@@ -28,7 +30,7 @@
 \newcommand{\balzert}[1]{$_{\textcolor{red}{\mbox{\small{Balzert S. #1}}}}$}
 \definecolor{lbcolor}{rgb}{0.92,0.92,0.92}
 \lstset{
-	backgroundcolor=\color{lbcolor},
+	backgroundcolor=\color{white},
 	tabsize=4,
 	rulecolor=,
 	language=c++,
@@ -50,8 +52,17 @@
     stringstyle=\color[rgb]{0.627,0.126,0.941},
 }
 
+%\newcommand{\balzert}[1]{$_{\textcolor{red}{\mbox{\small{Balzert S.#1}}}}$}
+\newcommand{\Balzert}[1]{${\textcolor{red}{\mbox{Balzert S.#1}}}$}
+
 \begin{document}
+\maketitle
+\tableofcontents
+
 \include{sections/CppCheatSheet}
 \include{sections/begriffe}
 \include{sections/diagramme}
+\include{sections/OOA}
+\include{sections/OOD}
+
 \end{document}
