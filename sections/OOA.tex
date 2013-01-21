@@ -56,8 +56,9 @@
       werden können. Alle Objekte einer Klasse haben dieselben Attribute, können
       aber unterschiedliche Attributwerte haben.
     \item[Klassenattribut] 
-      enn nur ein Attributwert für alle Objekte einer Klasse
-      existiert. Sie existieren auch, wenn es zu einer Klasse noch keine Objekte gibt.
+      Wenn nur ein Attributwert für alle Objekte einer Klasse existiert. 
+      Sie existieren auch, wenn es zu einer Klasse noch keine Objekte gibt.
+      Wird \underline{unterstrichen}
     \item[abgeleitets Attribut]
       kann zu jeder Zeit aus anderen Attributwerten berechnet werden. Wird mit \textbf{/zahl} geschrieben.  
     \item[Eigenschaftswerte]
@@ -73,11 +74,12 @@
       Eine Funktion die auf alle Attributwere eines Objekts Zugriff hat.
     \item[Klassenoperation] 
       Eine Operation, die der jeweiligen Klasse zugeordnet ist kann nicht auf 
-      ein einzelnes Objekt der Klasse angewendet werden kann. 
+      ein einzelnes Objekt der Klasse angewendet werden kann. Wird \underline{unterstrichen}
     \item[Verhalten] 
       Das Verhalten der Klasse ist die Menge aller Operationen
     \item[Abstrakte] 
-      Von einer abstrakten Klasse können keine Objekte erzeugt werden.
+      Von einer abstrakten Klasse können keine Objekte erzeugt werden. 
+      (\textit{kursiver Klassenname} oder $\lbrace$abstract$\rbrace$)
     \item[Basisklasse] 
       Vererbt abgeleiteten Klassen Attribute und Operationen
   \end{description}
@@ -94,9 +96,6 @@
       jedes Objekt hat eine Identität, welche einzigartig ist (unique)
 	\end{description}
 	
-\subsection{Komponente}
-  Ist ein Softwarebaustein, der über klar definierte Schnittstellen Verhalten (Funktionalität) bereitstellt.
-  interface component
   
 \subsection{Assoziation \balzert{42}}
 	Modelliert Objektbeziehungen zwischen Objekten einer oder mehrerer Klassen.
@@ -122,8 +121,6 @@
         starke Form der Aggregation. Beim löschen werden alle Teile gelöscht werden. 
         Jedes Teil kann nur zu einem Ganzen gehören}
     \parbox{9cm}{\includegraphics[width=6cm]{./bilder/Aggregation_Komposition.png}}
-    \item[Navigationsrichtung] 
-      Das erzeugen des einen erzwingt die Erzeugung des Anderen
     \item[Multiplizität]
       \parbox{5cm}{Bezeichnet die Anzahl der an der Assoziation beteiligten Objekte.}
       \hspace{0.5cm}
@@ -136,10 +133,9 @@
     \item[Leserichtung] 
       Angabe beim Assoziationsnamen. Wird mit ausgefülltem schwarzem Dreieck ($\RHD$) dargestellt.
     \item[Sichtbarkeit] 
-      Vor dem Rollenname geschriben. -private \#protected +public $\sim$package
-    \item[Eigenschaftswert der Assoziation] 
-      OOA: siehe \Balzert{45}\\
-      OOD: siehe \Balzert{288}
+      Vor dem Rollenname geschrieben. -private \#protected +public $\sim$package
+    \item[Eigenschaftswert] 
+      OOA: siehe \Balzert{45}
       
     \parbox{5cm}{
       \item[Rolle]
@@ -160,7 +156,9 @@
   
   \begin{description}
     \item[Einfachvererbung]
+      erbt von einer Basisklasse
     \item[Mehrfachvererbung]
+      erbt von mehreren Basisklassen
     \item[Generalisierung] 
       Die spezialisierte Klasse erweitert die Liste der
       Attribute, Operationen und Assoziationen der Basisklasse
@@ -184,13 +182,13 @@
 		\item[Akteur]
       \parbox{6cm}{
         ist eine Rolle, die ein Benutzer des Systems spielt. Jeder Akteur hat einen 
-        Einfluss uaf das System. Befindet sich stets ausserhalb des Systems}
+        Einfluss auf das System. Befindet sich stets ausserhalb des Systems}
       \hspace{0.5cm}
       \parbox{9cm}{\includegraphics[width=9cm]{./bilder/UseCase_Notation.png}}
     \item[Schablone]
       \begin{itemize}[leftmargin=4cm]
         \item[\textit{Ziel:}]
-          globlae Zielsetzung bei erfolgreicher Ausführung des Geschäftsprozesses.
+          globale Zielsetzung bei erfolgreicher Ausführung des Geschäftsprozesses.
         \item[\textit{Kategroie:}]
           primär, sekundär, optional
         \item[\textit{Vorbedingung:}]
@@ -243,7 +241,7 @@
   
   Es besteht aus
   \begin{description}
-    \item[Markoprozess]
+    \item[Makroprozess]
       Der Makroprozess legt die methodischen Schritte fest, sprich in welcher
       Reihenfolge die Checklisten abgearbeitet werden $\rightarrow$ siehe \Balzert{132}
     \item[Checklisten]

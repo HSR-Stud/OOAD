@@ -4,7 +4,7 @@
 \begin{multicols}{2}
 	\textbf{Include-Guard:}
 	\begin{lstlisting}
-	#if !defined(MeinHeader_H)
+	#ifndef MeinHeader_H
 	#define MeinHeader_H
 	// Ganzer Inhalt vom Header
 	#endif
@@ -154,7 +154,7 @@ class A{
 
 \textbf{Implementation:}
 \begin{lstlisting}
-A:A() {
+A::A() {
 	for(int i = 0; i<n; i++) {
 		// Alle Werte auf 0 initialisieren
 		mB[i] = 0; 
@@ -197,7 +197,7 @@ B b1;
 B b2;
 a.addB(&b1);
 a.addB(&b2);
-a.remove(&b2);
+a.removeB(&b2);
 // ...
 \end{lstlisting}
 \end{multicols}
