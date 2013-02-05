@@ -68,13 +68,16 @@
   \end{description}
   
 \subsection{Klasse \balzert{23}}
-  Eine Klasse ist eine Vorlage für ein Objekt.
-  \begin{description}
+  Eine Klasse ist eine Vorlage für ein Objekt.\\
+ \begin{minipage}[t]{4cm}\includegraphics[width=4cm]{./bilder/klasse}\end{minipage}
+ \begin{minipage}{15cm}
+   \begin{description}
     \item[Operation] 
       Eine Funktion die auf alle Attributwere eines Objekts Zugriff hat.
     \item[Klassenoperation] 
-      Eine Operation, die der jeweiligen Klasse zugeordnet ist kann nicht auf 
-      ein einzelnes Objekt der Klasse angewendet werden kann. Wird \underline{unterstrichen}
+      Eine Operation, die der jeweiligen Klasse zugeordnet ist. 
+      Kann nicht auf 
+      ein einzelnes Objekt der Klasse angewendet werden. Wird \underline{unterstrichen}
     \item[Verhalten] 
       Das Verhalten der Klasse ist die Menge aller Operationen
     \item[Abstrakte] 
@@ -83,6 +86,12 @@
     \item[Basisklasse] 
       Vererbt abgeleiteten Klassen Attribute und Operationen
   \end{description}
+  \end{minipage}
+  
+  \subsubsection{Notation}
+  		Der \textbf{Klassenname} ist immer ein Substantiv im Singular, das durch ein Adjektiv
+  		ergänzt werden kann. Der Klassenname wird fett geschrieben und beginnt mit einem
+  		Grossbuchstaben. \\
   
 \subsection{Objekt \balzert{20}}
 	Ein Objekt wird aus einer Klasse erzeugt, ist also ein Exemplar einer Klasse.
@@ -95,6 +104,23 @@
 		\item[Objektidentität] 
       jedes Objekt hat eine Identität, welche einzigartig ist (unique)
 	\end{description}
+	
+	\subsubsection{Notation}
+			Objektnamen werden immer klein geschrieben und unterstrichen. \\
+		\begin{tabular}{l l}
+			\underline{:Klasse} & anonymes Objekt \\
+			\underline{objekt:Klasse} & Objekt wird über Namen angesprochen \\
+			\underline{objekt} & wenn Objektname zur Identifikation ausreicht \\
+		\end{tabular}\\
+		
+	\begin{multicols}{2}	
+		\subsubsection{Geheimnisprinzip}
+		Daten sind nach aussen verborgen und können nur über Operationen gelesen oder geändert werden.\\
+		\subsubsection{Objektidentität}
+		Eigenschaft, die ein Objekt von allen anderen Objekten unterscheidet. Bei zwei Objekten
+		mit gleichen Attributwerten sprechen wir von Gleichheit, wenn dasselbe Objekt gemeint
+		ist von Identität.
+	\end{multicols}
 	
   
 \subsection{Assoziation \balzert{42}}
@@ -124,7 +150,7 @@
     \item[Multiplizität]
       \parbox{5cm}{Bezeichnet die Anzahl der an der Assoziation beteiligten Objekte.}
       \hspace{0.5cm}
-      \parbox{9cm}{\includegraphics[width=6cm]{./bilder/Notation_Multiplizitaet.png}}
+      \parbox{4cm}{\includegraphics[width=4cm]{./bilder/Notation_Multiplizitaet.png}}
     \item[abgeleitete Assoziation] 
       Die Abhängigkeiten sind bereits durch andere Assoziationen beschrieben worden.
       Präfix "`\textbf{/}"'
@@ -137,14 +163,14 @@
     \item[Eigenschaftswert] 
       OOA: siehe \Balzert{45}
       
-    \parbox{5cm}{
+    \parbox{8cm}{
       \item[Rolle]
         Information oder die Bedeutung/Funktion einer Klasse in Beziehung zu einer anderen.
       \item[Rollenname]
         Jeweils am Ende der Assoziationsrichtung von der Klasse, 
         deren Bedeutung sie beschreibt. Kann zur Verständlichkeit beitragen.}
     \hspace{0.5cm}
-    \parbox{8cm}{\includegraphics[width=8cm]{./bilder/Rolle.png}}
+    \parbox{6cm}{\includegraphics[width=6cm]{./bilder/Rolle.png}}
   \end{description}
 
 \subsection{Generalisierung (Vererbung) \balzert{52}}
@@ -167,25 +193,34 @@
       (z.B. nach Tätigkeit, Job, etc.)
   \end{description}
 
-\subsection{Aktivität \balzert{69}}
-  Eine Aktivität beschreibt die Auführung von Funktionalität bzw. Verhalten.
+ \begin{multicols}{2}
+	\subsection{Aktivität \balzert{69}}
+  		Eine Aktivität beschreibt die Ausführung von Funktionalität bzw. Verhalten.
 
-\subsection{Zustandsautomat \balzert{87}}
-  Zustandsdiagramm (finit state diagram)
+	\subsection{Zustandsautomat \balzert{87}}
+ 		 Zustandsdiagramm (finit state diagram)
+ \end{multicols}
  
+\subsection{Objektdiagramm (\textit{object diagram})\balzert{21}}
+	\begin{multicols}{2}
+		Momentaufnahme / Schnappschuss des Systems. \\
+		Beschreibt Objekte, Attributwerte, Objektbeziehungen zu einem bestimmten Zeitpunkt. \\
+	\columnbreak
+		\includegraphics[width=5cm]{./bilder/objektdiagramm}
+	\end{multicols}
 
-\newpage
+
 
 \subsection{Use-Case Diagramm \balzert{62}}
 	Ein Use-Case spezifiziert eine Sequenz von Aktionen
-	\begin{description}[leftmargin=2cm]
+	\begin{description}[leftmargin=2.5cm]
 		\item[Akteur]
-      \parbox{6cm}{
+      \parbox{7cm}{
         ist eine Rolle, die ein Benutzer des Systems spielt. Jeder Akteur hat einen 
         Einfluss auf das System. Befindet sich stets ausserhalb des Systems}
       \hspace{0.5cm}
-      \parbox{9cm}{\includegraphics[width=9cm]{./bilder/UseCase_Notation.png}}
-    \item[Schablone]
+      \parbox{6cm}{\includegraphics[width=6cm]{./bilder/UseCase_Notation.png}}
+    \item[Schablone \Balzert{68}]
       \begin{itemize}[leftmargin=4cm]
         \item[\textit{Ziel:}]
           globale Zielsetzung bei erfolgreicher Ausführung des Geschäftsprozesses.
@@ -215,28 +250,30 @@
           \begin{enumerate}[leftmargin=0.5cm]
             \item[1a] Alternative Ausführung der ersten Aktion
             \item[1b] Weitere Alternativen zur ersten Aktion
+            \item[2b] ...
           \end{enumerate}
-        \item[\Balzert{68}]
       \end{itemize}
 	\end{description}
 
-
-\subsection{Szenario \balzert{80}}
-  Ein Szenario ist eine Sequenz von Verarbeitungsschritten, die unter bestimmten
-  Bedingungen auszuführen ist.\\
-  Die Szenarien lassen sich in zwei Kategorien unterteilen, die die eine erfolgreiche Bearbeitung
+  %\begin{multicols}{2}
+	\subsection{Szenario \balzert{80}}
+  		Ein Szenario ist eine Sequenz von Verarbeitungsschritten, die unter bestimmten
+  		Bedingungen auszuführen sind.\\
+  		Die Szenarien lassen sich in zwei Kategorien unterteilen, die die eine erfolgreiche Bearbeitung
   des Use-Case beschreiben und jene Szenarien welche zu einem Fehlschlag führen. \\
   
   \textbf{Diagrammübersicht:}
-  \begin{itemize}[leftmargin=0.5cm]
-    \item Sequenzdiagramm $\rightarrow$ siehe \Balzert{81}
-    \item Kommunikationsdiagramm $\rightarrow$ siehe \Balzert{85}
-    \item Timing-Diagramm
-    \item Interaktionsübersichtsdiagram
-  \end{itemize}
+  \begin{multicols}{2}
+  	\begin{itemize}[leftmargin=0.5cm]
+    	\item Sequenzdiagramm $\rightarrow$ \Balzert{81}
+    	\item Kommunikationsdiagramm $\rightarrow$ \Balzert{85}
+    	\item Timing-Diagramm
+    	\item Interaktionsübersichtsdiagram
+  	\end{itemize}
+  \end{multicols}
   
 \subsection{Analyseprozess \balzert{130}}
-  Der Analyseprozess beschreibt die methodeische Vorgehensweise zur Erstellung eines
+  Der Analyseprozess beschreibt die methodische Vorgehensweise zur Erstellung eines
   obejektorientierten Analysemodells.\\
   
   Es besteht aus
@@ -248,4 +285,5 @@
       siehe \Balzert{133}
   \end{description}
   
+  %\end{multicols}
   

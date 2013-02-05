@@ -105,14 +105,8 @@ class B {
 		B(A* pa);		// Konstruktor
 	
 	private:
-		A* mA;
-<<<<<<< HEAD
-		B(A* pA);
-	public: 
-		A* getA();		
-=======
+		A* mA;		
 		B();			// Default Konstruktor
->>>>>>> NiFa18/master
 }
 \end{lstlisting}
 \columnbreak
@@ -213,7 +207,7 @@ a.removeB(&b2);
 		void setGewicht(int pGewicht);
 	
 	private:
-		int gewicht;
+		int mGewicht;
 	};
 \end{lstlisting}
 
@@ -228,7 +222,7 @@ a.removeB(&b2);
 		void setPersonen(int pPersonen);
 		
 	private:
-		int	personen;
+		int	mPersonen;
 	}	
 \end{lstlisting}
 \end{multicols}
