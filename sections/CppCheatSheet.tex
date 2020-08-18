@@ -59,6 +59,8 @@ class A{
 void A::setB(B* pB) {
 	mB = pB;
 }
+// Oder mit Initialisierungsliste
+void A::setB(B* pB): mB(pB) {}
 \end{lstlisting}
 
 \columnbreak
@@ -148,6 +150,9 @@ class A{
 
 \textbf{Implementation:}
 \begin{lstlisting}
+#include A.h
+#include B.h
+
 A::A() {
 	for(int i = 0; i<n; i++) {
 		// Alle Werte auf 0 initialisieren

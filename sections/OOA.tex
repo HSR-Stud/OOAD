@@ -168,7 +168,7 @@
         Information oder die Bedeutung/Funktion einer Klasse in Beziehung zu einer anderen.
       \item[Rollenname]
         Jeweils am Ende der Assoziationsrichtung von der Klasse, 
-        deren Bedeutung sie beschreibt. Kann zur Verständlichkeit beitragen.}
+        deren Bedeutung sie beschreibt. Kann zur Verständlichkeit beitragen. Ist zwingend für Reflexive Assoziationen.}
     \hspace{0.5cm}
     \parbox{6cm}{\includegraphics[width=6cm]{./bilder/Rolle.png}}
   \end{description}
@@ -176,11 +176,12 @@
 \subsection{Generalisierung (Vererbung) \balzert{52}}
   Beschreibt die Beziehung zwischen einer allgemeinen Klasse (Basisklasse) und
   einer spezialisierten Klasse. Die spezialisierte Klasse ist vollständig
-  konstistent mit der Basisklasse, enthält aber zusätzliche Informationen
+  konsistent mit der Basisklasse, enthält aber zusätzliche Informationen
   (Attribute, Operationen, Assoziationen). Jedes Objekt der Unterklasse \textbf{ist ein} 
   Objekt der Oberklasse.
-  
+   	
   \begin{description}
+  	\parbox{9cm}{
     \item[Einfachvererbung]
       erbt von einer Basisklasse
     \item[Mehrfachvererbung]
@@ -190,7 +191,10 @@
       Attribute, Operationen und Assoziationen der Basisklasse
     \item[Generalisierungsmenge] 
       spezifiziert, nach welchen Kriterien eine Generalisierungstruktur erstellt wird.
-      (z.B. nach Tätigkeit, Job, etc.)
+      (z.B. nach Tätigkeit, Job, etc.)}
+  \parbox{8cm}{
+  	\includegraphics[width=5cm]{./bilder/Mechanismus_Vererbung}
+  }
   \end{description}
 
  \begin{multicols}{2}
@@ -236,7 +240,7 @@
           Rollen von Personen oder anderen Systeme, die den Use-Case auslösen
           oder daran beteiligt sind.
         \item[\textit{Auslösendes Ereignis:}]
-          Wenn dieses Ereignis eintritt, dannn wird der Use-Case initiiert.
+          Wenn dieses Ereignis eintritt, dann wird der Use-Case initiiert.
         \item[\textit{Beschreibung:}]
           \begin{enumerate}[leftmargin=0.5cm]
             \item Erste Aktion
@@ -274,7 +278,7 @@
   
 \subsection{Analyseprozess \balzert{130}}
   Der Analyseprozess beschreibt die methodische Vorgehensweise zur Erstellung eines
-  obejektorientierten Analysemodells.\\
+  objektorientierten Analysemodells.\\
   
   Es besteht aus
   \begin{description}
