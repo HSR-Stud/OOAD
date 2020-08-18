@@ -59,8 +59,6 @@ class A{
 void A::setB(B* pB) {
 	mB = pB;
 }
-// Oder mit Initialisierungsliste
-void A::setB(B* pB): mB(pB) {}
 \end{lstlisting}
 
 \columnbreak
@@ -117,8 +115,7 @@ class B {
 B::B(A* pA)
 : mA(pA)
 {
-	mA->setB(this); 
-	// Kann auch im im Aufruf erfolgen
+	mA->setB(this); // Kann auch im Aufruf erfolgen
 }
 \end{lstlisting}
 
@@ -150,13 +147,12 @@ class A{
 
 \textbf{Implementation:}
 \begin{lstlisting}
-#include A.h
-#include B.h
+#include "A.h"
+#include "B.h"
 
 A::A() {
 	for(int i = 0; i<n; i++) {
-		// Alle Werte auf 0 initialisieren
-		mB[i] = 0; 
+		mB[i] = 0; 	// Alle Werte auf 0 initial.
 	}
 }
 
