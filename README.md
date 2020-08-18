@@ -1,7 +1,7 @@
 OOAD - Objektorientierte Analyse und Design
 ====
 
-## Erlaubte Hilfsmittel (nach Modulprüfung HS2012/13)
+## Erlaubte Hilfsmittel (nach Modulprüfung FS2020)
 
 * beliebige Papierunterlagen
 * _keine_ elektronischen Hilfsmittel
